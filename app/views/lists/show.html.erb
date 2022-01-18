@@ -12,7 +12,7 @@
     </li>
       <% movie.bookmarks.each do |bookmark| %>
         <%= bookmark.comment %> -
-        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you really sure?", class: "btn btn-danger" } %>
+        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you really sure?", class: 'btn btn-danger' } %>
         <% end %>
     <% end %>
 
