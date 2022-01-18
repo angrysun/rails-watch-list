@@ -1,22 +1,31 @@
 <div class="container">
   <h1><%= @list.name %></h1>
 
+  <% @list.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
   <div class="container">
     <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
   </div>
 
-  <ul>
-    <li>
-    <% @list.movies.each do |movie| %>
-      <%= movie.title %> -
-    </li>
-      <% movie.bookmarks.each do |bookmark| %>
-        <%= bookmark.comment %> -
-        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you really sure?", class: 'btn btn-danger' } %>
+  <div class="container">
+    <div class="row">
+      <ul>
+        <li>
+        <% @list.movies.each do |movie| %>
+          <%= movie.title %> -
+        </li>
+          <% movie.bookmarks.each do |bookmark| %>
+            <%= bookmark.comment %> -
+            <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you really sure?", class: 'btn btn-danger' } %>
+            <% end %>
         <% end %>
-    <% end %>
+      </ul>
+    </div>
+  </div>
 
-  </ul>
+
 
   <%= link_to "Back", lists_path %>
 </div>
