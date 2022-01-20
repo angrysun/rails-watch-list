@@ -1,4 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photos.first.key, crop: :fill %>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url(<%= cl_image_path @list.photos.attached? ? cl_image_path(@list.photos.first.key) :
+    image_path('https://specials-images.forbesimg.com/imageserve/1216239173/960x0.jpg?cropX1=0&cropX2=5000&cropY1=0&cropY2=3333'), crop: :fill %>)">
   <div class="container">
     <h1><%= @list.name %></h1>
   </div>
@@ -31,4 +33,5 @@
   </div>
   <%= link_to "Back", root_path, class: 'btn btn-secondary mt-3' %>
 </div>
-<%# <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('some path to a default photo') %>
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photos.first.key, crop: :fill %>
