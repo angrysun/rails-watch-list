@@ -1,11 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path("bwrgctofsnrs4qry65te", crop: :fill) %>')">
+  <div class="container">
+    <h1>Make a movie list</h1>
+    <p>And watch your favorites later</p>
+  </div>
+</div>
 <div class="container">
-  <h1>All the list</h1>
-
-  <%= link_to "Add a new list", new_list_path %>
-
-  <ul>
+  <%= link_to "Add a new movie list", new_list_path, class: 'btn btn-light my-3' %>
+  <div class="row">
     <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= link_to list_path(list) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photos.first.key, crop: :fill %>')">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
