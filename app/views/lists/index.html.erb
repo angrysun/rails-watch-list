@@ -11,8 +11,8 @@
       <div class="col-12 col-md-6 col-lg-4 mb-3">
         <%= link_to list_path(list) do %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
-          rgba(0,0,0,0.3)), url(<%= cl_image_path list.photos.attached? ? cl_image_path(list.photos.first.key) :
-          image_path('https://specials-images.forbesimg.com/imageserve/1216239173/960x0.jpg?cropX1=0&cropX2=5000&cropY1=0&cropY2=3333'), crop: :fill %>)">
+          rgba(0,0,0,0.3)), url(<%= list.photos.attached? ? cl_image_path(list.photos.first.key) :
+          image_path('https://specials-images.forbesimg.com/imageserve/1216239173/960x0.jpg?cropX1=0&cropX2=5000&cropY1=0&cropY2=3333') %>)">
             <%= list.name %>
           </div>
         <% end %>

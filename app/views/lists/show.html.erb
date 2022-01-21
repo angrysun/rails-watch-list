@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url(<%= cl_image_path @list.photos.attached? ? cl_image_path(@list.photos.first.key) :
-    image_path('https://specials-images.forbesimg.com/imageserve/1216239173/960x0.jpg?cropX1=0&cropX2=5000&cropY1=0&cropY2=3333'), crop: :fill %>)">
+    url(<%= @list.photos.attached? ? cl_image_path(@list.photos.first.key) :
+    image_path('https://specials-images.forbesimg.com/imageserve/1216239173/960x0.jpg?cropX1=0&cropX2=5000&cropY1=0&cropY2=3333') %>)">
   <div class="container">
     <h1><%= @list.name %></h1>
   </div>
